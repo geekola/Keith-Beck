@@ -206,7 +206,7 @@ function App() {
               variant="contained" 
               color="secondary" 
               size="large"
-              href="https://www.amazon.com/Dark-Fortunes-Keith-Beck/"
+              href="https://www.amazon.com/Dark-Fortunes-Keith-Beck/dp/1886591369"
               target="_blank"
               sx={{ 
                 px: { xs: 3, md: 4 },
