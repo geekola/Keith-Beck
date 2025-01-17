@@ -1,4 +1,4 @@
-import submarineImg from './submarine.png';
+import submarineImg from './submarine.gif';
 import coverFrontImg from './cover_front.jpg';
 import coverBackImg from './cover_back.jpg';
 
