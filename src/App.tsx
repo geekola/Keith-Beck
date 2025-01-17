@@ -157,7 +157,7 @@ function App() {
             '&::after': {
               content: '""',
               position: 'absolute',
-              top: '68%',
+              top: '69%',
               left: '50%',
               width: '50%',
               height: '50%',
@@ -167,7 +167,6 @@ function App() {
               backgroundPosition: 'center',
               backgroundRepeat: 'no-repeat',
               opacity: 0.1,
-              filter: 'blur(2px)',
               zIndex: 0,
             }
           }}
