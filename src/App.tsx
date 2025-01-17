@@ -18,6 +18,7 @@ import { Mail, Moon, Sun } from 'lucide-react';
 import { ScrollProgress } from './components/ScrollProgress';
 import { BackToTop } from './components/BackToTop';
 import { LazyImage } from './components/LazyImage';
+import { bookImage } from './assets/cover_front.jpg';
 
 function App() {
   const [mode, setMode] = useState<'light' | 'dark'>('light');
@@ -221,8 +222,8 @@ function App() {
                     : '0 20px 40px rgba(0,0,0,0.3)',
                 }}
               >
-                <LazyImage
-                  src="https://images.unsplash.com/photo-1543002588-bfa74002ed7e?auto=format&fit=crop&q=80"
+                <img 
+                  src={bookImage}
                   alt="Dark Fortunes Book Cover"
                   height={600}
                 />
