@@ -18,7 +18,7 @@ import { Mail, Moon, Sun } from 'lucide-react';
 import { ScrollProgress } from './components/ScrollProgress';
 import { BackToTop } from './components/BackToTop';
 import { LazyImage } from './components/LazyImage';
-import { bookImage } from './assets/cover_front.jpg';
+import { images } from './assets/images';
 
 function App() {
   const [mode, setMode] = useState<'light' | 'dark'>('light');
@@ -113,7 +113,7 @@ function App() {
                   fontSize: { xs: '0.7rem', sm: '0.8rem' },
                 }}
               >
-                AUTHOR
+               | AUTHOR
               </Typography>
             </Box>
             <IconButton
@@ -143,6 +143,7 @@ function App() {
             textAlign: 'center',
             color: 'white',
             py: { xs: 8, md: 0 },
+            overflow: 'hidden',
             '&::before': {
               content: '""',
               position: 'absolute',
@@ -151,13 +152,30 @@ function App() {
               right: 0,
               bottom: 0,
               background: 'radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.4) 100%)',
+              zIndex: 1,
+            },
+            '&::after': {
+              content: '""',
+              position: 'absolute',
+              top: '68%',
+              left: '50%',
+              width: '50%',
+              height: '50%',
+              transform: 'translate(-50%, -50%)',
+              backgroundImage: `url(${images.submarine})`,
+              backgroundSize: 'contain',
+              backgroundPosition: 'center',
+              backgroundRepeat: 'no-repeat',
+              opacity: 0.1,
+              filter: 'blur(2px)',
+              zIndex: 0,
             }
           }}
         >
           <Container 
             sx={{ 
               position: 'relative', 
-              zIndex: 1,
+              zIndex: 2,
               px: { xs: 2, sm: 3, md: 4 },
             }}
           >
@@ -212,24 +230,6 @@ function App() {
         <Container sx={{ py: { xs: 6, md: 8 } }}>
           <Grid container spacing={{ xs: 4, md: 6 }} alignItems="center">
             <Grid item xs={12} md={6}>
-              <Card 
-                elevation={0}
-                sx={{ 
-                  borderRadius: 2,
-                  overflow: 'hidden',
-                  boxShadow: mode === 'light' 
-                    ? '0 20px 40px rgba(0,0,0,0.1)'
-                    : '0 20px 40px rgba(0,0,0,0.3)',
-                }}
-              >
-                <img 
-                  src={bookImage}
-                  alt="Dark Fortunes Book Cover"
-                  height={600}
-                />
-              </Card>
-            </Grid>
-            <Grid item xs={12} md={6}>
               <Box sx={{ px: { xs: 0, md: 4 } }}>
                 <Typography variant="h2" gutterBottom>
                   About the Book
@@ -258,6 +258,24 @@ function App() {
                   </Button>
                 </Box>
               </Box>
+            </Grid>
+            <Grid item xs={12} md={6}>
+              <Card 
+                elevation={0}
+                sx={{ 
+                  borderRadius: 2,
+                  overflow: 'hidden',
+                  boxShadow: mode === 'light' 
+                    ? '0 20px 40px rgba(0,0,0,0.1)'
+                    : '0 20px 40px rgba(0,0,0,0.3)',
+                }}
+              >
+                <LazyImage 
+                  src={images.coverFront}
+                  alt="Dark Fortunes Book Cover"
+                  height={600}
+                />
+              </Card>
             </Grid>
           </Grid>
         </Container>
